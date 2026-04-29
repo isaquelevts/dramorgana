@@ -150,7 +150,7 @@
         .hero-cta:hover svg { transform: translateX(3px); }
 
         .hero-photo {
-            position: relative; border-radius: 260px 260px 24px 24px;
+            position: relative; border-radius: 24px;
             height: 600px; background: var(--primary-lighter);
             overflow: hidden; display: flex; align-items: center;
             justify-content: center;
@@ -327,7 +327,8 @@
         .hosp-card {
             background: white; padding: 1.75rem 2rem; border-radius: 12px;
             text-align: center; flex: 1 1 200px; max-width: 220px;
-            transition: all 0.3s;
+            transition: all 0.3s; min-height: 140px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
         }
 
         .hosp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(160, 97, 96, 0.1); }
@@ -360,7 +361,7 @@
         }
 
         .contact-map {
-            width: 100%; aspect-ratio: 4/3;
+            width: 100%; max-width: 100%; aspect-ratio: 4/3;
             background: var(--bg); border-radius: 16px;
             overflow: hidden; position: relative;
         }
@@ -471,7 +472,7 @@
 
             .hero .wrap { grid-template-columns: 1fr; gap: 3rem; }
             .hero h1 { font-size: 2.6rem; }
-            .hero-photo { height: 400px; border-radius: 180px 180px 20px 20px; }
+            .hero-photo { height: 400px; border-radius: 24px; }
 
             .about .wrap { grid-template-columns: 1fr; gap: 2.5rem; }
             .about-photo { max-width: 320px; }
@@ -481,8 +482,8 @@
 
             .cred-grid { grid-template-columns: 1fr; }
 
-            .hosp-grid { flex-direction: column; align-items: center; }
-            .hosp-card { max-width: 100%; }
+            .hosp-grid { flex-direction: column; align-items: stretch; }
+            .hosp-card { max-width: 100%; width: 100%; }
 
             .contact .wrap { grid-template-columns: 1fr; gap: 3rem; }
             .contact h2 { font-size: 2.4rem; }
@@ -721,7 +722,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-item-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 0 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg>
                         </div>
                         <div class="contact-item-text">
                             <span class="contact-item-label">Instagram</span>
