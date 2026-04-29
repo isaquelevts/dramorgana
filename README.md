@@ -2,6 +2,8 @@
 
 Landing page para ginecologista, obstetra e mastologista.
 
+**Repositório:** https://github.com/isaquelevts/dramorgana
+
 ## Como publicar no GitHub Pages
 
 ### 1. Criar repositório no GitHub
@@ -16,7 +18,7 @@ Landing page para ginecologista, obstetra e mastologista.
 Execute os comandos abaixo na pasta do projeto (substitua `SEU_USUARIO` pelo seu usuário do GitHub):
 
 ```bash
-git remote add origin https://github.com/SEU_USUARIO/dramorgana-landing.git
+git remote add origin https://github.com/isaquelevts/dramorgana.git
 git branch -M main
 git push -u origin main
 ```
@@ -32,7 +34,7 @@ git push -u origin main
 
 ### 4. Aguardar publicação
 - Em alguns minutos, sua página estará disponível em:
-  `https://SEU_USUARIO.github.io/dramorgana-landing/`
+  `https://isaquelevts.github.io/dramorgana/`
 
 ---
 
