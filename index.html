@@ -78,6 +78,22 @@
 
         nav ul { display: flex; gap: 2rem; list-style: none; }
 
+        .nav-toggle {
+            display: none; background: none; border: none; cursor: pointer;
+            width: 44px; height: 44px; padding: 10px;
+            flex-direction: column; justify-content: center; gap: 5px;
+        }
+
+        .nav-toggle span {
+            display: block; height: 2px; width: 100%;
+            background: var(--primary-deep); border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
         nav a.nav-link {
             color: var(--text-medium); text-decoration: none; font-weight: 500;
             font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase;
@@ -481,8 +497,31 @@
         @media (max-width: 768px) {
             nav { padding: 0.9rem 0; }
             nav .wrap { padding: 0 1.25rem; }
-            nav ul { display: none; }
             .logo-monogram { width: 180px; }
+
+            .nav-toggle { display: flex; }
+
+            nav ul {
+                position: absolute; top: 100%; left: 0; right: 0;
+                flex-direction: column; gap: 0;
+                background: rgba(244, 238, 233, 0.98);
+                backdrop-filter: blur(14px);
+                padding: 0 1.25rem; max-height: 0; overflow: hidden;
+                box-shadow: 0 14px 30px rgba(160, 97, 96, 0.12);
+                transition: max-height 0.35s ease, padding 0.35s ease;
+            }
+
+            nav ul.open { max-height: 340px; padding: 0.25rem 1.25rem 1rem; }
+
+            nav ul li { width: 100%; }
+
+            nav a.nav-link {
+                display: block; padding: 0.95rem 0; font-size: 1rem;
+                border-bottom: 1px solid rgba(160, 97, 96, 0.12);
+            }
+
+            nav ul li:last-child a.nav-link { border-bottom: none; }
+            nav a.nav-link::after { display: none; }
 
             .hero { padding: 6rem 1.5rem 3.5rem; min-height: auto; }
             .hero .wrap { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -549,7 +588,10 @@
                 </div>
                 <span class="logo-text">Dra. Morgana Domingues</span>
             </a>
-            <ul>
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-menu">
                 <li><a href="#sobre" class="nav-link">Sobre</a></li>
                 <li><a href="#servicos" class="nav-link">Serviços</a></li>
                 <li><a href="#formacao" class="nav-link">Formação</a></li>
@@ -817,6 +859,20 @@
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
         }, { threshold: 0.15 });
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Mobile hamburger menu
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const setMenu = (open) => {
+            navMenu.classList.toggle('open', open);
+            navToggle.classList.toggle('open', open);
+            navToggle.setAttribute('aria-expanded', open);
+            navToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        };
+        navToggle.addEventListener('click', () => setMenu(!navMenu.classList.contains('open')));
+        navMenu.querySelectorAll('a.nav-link').forEach(link => {
+            link.addEventListener('click', () => setMenu(false));
+        });
     </script>
 </body>
 </html>
