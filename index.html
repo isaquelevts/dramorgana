@@ -244,6 +244,24 @@
 
         .about p strong { color: var(--primary-deep); font-weight: 700; }
 
+        .about-cta {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.7rem;
+            margin-top: 0.75rem; padding: 0.95rem 1.6rem;
+            background: var(--primary); color: white; text-decoration: none;
+            border-radius: 60px; font-weight: 600; font-size: 0.95rem;
+            box-shadow: 0 8px 24px rgba(160, 97, 96, 0.22);
+            transition: all 0.3s ease;
+        }
+
+        .about-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(160, 97, 96, 0.32);
+        }
+
+        .about-cta svg { width: 18px; height: 18px; transition: transform 0.3s; }
+        .about-cta:hover svg { transform: translateX(3px); }
+
         /* ── SERVICES ── */
         .services { padding: 6rem 2rem; background: var(--bg); }
         .services .wrap { max-width: 1200px; margin: 0 auto; }
@@ -264,17 +282,19 @@
 
         .services-row-top {
             display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 1.75rem; max-width: 770px; margin: 0 auto 1.75rem;
+            gap: 1rem; max-width: 780px; margin: 0 auto 1rem;
         }
 
         .services-grid {
             display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 1.75rem;
+            gap: 1rem;
         }
 
         .s-card {
-            background: white; padding: 2.5rem 2rem; border-radius: 16px;
+            background: white; padding: 1.05rem 1.2rem; border-radius: 10px;
             transition: all 0.35s ease; position: relative; overflow: hidden;
+            display: flex; align-items: center; gap: 0.9rem; min-height: 88px;
+            border: 1px solid rgba(160, 97, 96, 0.08);
         }
 
         .s-card::before {
@@ -287,23 +307,19 @@
         .s-card:hover::before { transform: scaleX(1); }
 
         .s-card-icon {
-            width: 56px; height: 56px; border-radius: 14px;
+            width: 42px; height: 42px; border-radius: 12px;
             background: var(--bg); display: flex; align-items: center;
-            justify-content: center; margin-bottom: 1.5rem;
+            justify-content: center; flex-shrink: 0;
             transition: background 0.3s;
         }
 
         .s-card:hover .s-card-icon { background: rgba(160, 97, 96, 0.1); }
 
-        .s-card-icon svg { width: 28px; height: 28px; color: var(--primary); }
+        .s-card-icon svg { width: 22px; height: 22px; color: var(--primary); }
 
         .s-card h3 {
-            font-size: 1.25rem; color: var(--text-dark); margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .s-card p {
-            color: var(--text-medium); line-height: 1.75; font-size: 0.98rem;
+            font-size: 1.05rem; color: var(--text-dark);
+            font-weight: 600; line-height: 1.35;
         }
 
         /* ── CREDENTIALS ── */
@@ -339,38 +355,36 @@
         .hospitals .wrap { max-width: 1200px; margin: 0 auto; }
 
         .hosp-grid {
-            display: flex; gap: 1.25rem; margin-top: 3rem;
-            flex-wrap: wrap; justify-content: center;
+            display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 1rem; margin: 3rem auto 0; max-width: 980px;
         }
 
         .hosp-card {
-            background: white; padding: 1.75rem 2rem; border-radius: 12px;
-            text-align: center; flex: 1 1 200px; max-width: 220px;
-            transition: all 0.3s; min-height: 140px;
+            background: white; padding: 1.2rem; border-radius: 10px;
+            text-align: center; transition: all 0.3s; aspect-ratio: 1 / 1;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
+            border: 1px solid rgba(160, 97, 96, 0.08);
         }
 
         .hosp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(160, 97, 96, 0.1); }
 
         .hosp-logo {
             height: 64px; display: flex; align-items: center;
-            justify-content: center; margin: 0 auto 1.1rem;
+            justify-content: center; margin: 0 auto 0.9rem;
         }
 
         .hosp-logo img {
-            max-height: 64px; max-width: 150px; width: auto;
+            max-height: 58px; max-width: 130px; width: auto;
             object-fit: contain; display: block;
         }
 
-        .hosp-logo--dark {
-            background: var(--text-dark); border-radius: 12px;
-            padding: 0.85rem 1.25rem; height: auto;
+        .hosp-logo--hcor img {
+            max-height: 48px;
+            filter: brightness(0) saturate(100%) invert(38%) sepia(14%) saturate(1111%) hue-rotate(313deg) brightness(91%) contrast(84%);
         }
 
-        .hosp-logo--dark img { max-height: 40px; }
-
         .hosp-card h3 {
-            font-size: 1rem; color: var(--text-dark); font-weight: 600; line-height: 1.4;
+            font-size: 0.92rem; color: var(--text-dark); font-weight: 600; line-height: 1.35;
         }
 
         /* ── CONTACT ── */
@@ -545,8 +559,12 @@
             .cred-grid { grid-template-columns: 1fr; margin-top: 2.5rem; }
 
             .hospitals { padding: 4rem 1.5rem; }
-            .hosp-grid { flex-direction: column; align-items: stretch; margin-top: 2.5rem; }
-            .hosp-card { max-width: 100%; width: 100%; min-height: 0; padding: 1.5rem; }
+            .hosp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 2.5rem; }
+            .hosp-grid .hosp-card:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                width: min(100%, 220px);
+            }
 
             .contact { padding: 4.5rem 1.5rem; }
             .contact .wrap { grid-template-columns: 1fr; gap: 3rem; }
@@ -574,7 +592,13 @@
 
             .section-head h2, .contact h2 { font-size: 1.9rem; }
 
-            .s-card { padding: 2rem 1.5rem; }
+            .s-card { min-height: 74px; padding: 0.95rem 1rem; }
+            .s-card h3 { font-size: 1rem; }
+            .hosp-grid { gap: 0.75rem; }
+            .hosp-card { padding: 0.9rem; }
+            .hosp-logo img { max-height: 46px; max-width: 112px; }
+            .hosp-card h3 { font-size: 0.82rem; }
+            .hosp-grid .hosp-card:last-child:nth-child(odd) { width: min(100%, 180px); }
         }
     </style>
 </head>
@@ -639,6 +663,10 @@
                 <p>Atua como mastologista no Centro de Oncologia do Hospital Santa Catarina e integra o corpo clínico de instituições de referência como Hospital Israelita Albert Einstein, Hospital Alemão Oswaldo Cruz, Hospital Beneficência Portuguesa de São Paulo e HCor.</p>
 
                 <p>Dedica-se também à formação de novos médicos, sendo preceptora da residência de <strong>Mastologia</strong> da <strong>UNIFESP</strong> e <strong>professora</strong> de Medicina da Universidade Santo Amaro (UNISA).</p>
+                <a href="https://wa.me/5511937088275" class="about-cta">
+                    Entrar em contato
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -663,7 +691,6 @@
                         </svg>
                     </div>
                     <h3>Mastologia</h3>
-                    <p>Avaliação, rastreamento e tratamento de doenças mamárias, nódulos, alto risco familiar e câncer de mama.</p>
                 </div>
 
                 <div class="s-card fade-up">
@@ -674,7 +701,6 @@
                         </svg>
                     </div>
                     <h3>Cirurgias Mamárias</h3>
-                    <p>Procedimentos cirúrgicos realizados em hospitais de referência em São Paulo.</p>
                 </div>
             </div>
 
@@ -686,7 +712,6 @@
                         </svg>
                     </div>
                     <h3>Ginecologia Geral</h3>
-                    <p>Consultas de rotina ginecológica, acompanhamento personalizado nas diferentes fases da vida da mulher.</p>
                 </div>
 
                 <div class="s-card fade-up">
@@ -697,7 +722,6 @@
                         </svg>
                     </div>
                     <h3>Contracepção e Planejamento</h3>
-                    <p>Inserção de DIU e Implanon, orientação sobre métodos contraceptivos e planejamento reprodutivo.</p>
                 </div>
 
                 <div class="s-card fade-up">
@@ -708,7 +732,6 @@
                         </svg>
                     </div>
                     <h3>Menopausa e Climatério</h3>
-                    <p>Seguimento e tratamento dos sintomas do climatério com abordagem atualizada e individualizada.</p>
                 </div>
             </div>
         </div>
@@ -733,8 +756,8 @@
                 <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Mestrado em Ciências</strong> — UNIFESP</p></div>
                 <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Preceptora da Residência de Mastologia</strong> — UNIFESP</p></div>
                 <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Professora de Medicina</strong> — Universidade Santo Amaro (UNISA)</p></div>
-                <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Estágio em Clínica Médica</strong> — Hospital Virgen de la Vega, Salamanca, Espanha (2011)</p></div>
-                <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Estágio em Reconstrução Mamária</strong> — Instituto Europeu di Oncologia (IEO), Milão, Itália (2018)</p></div>
+                <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Observership em Clínica Médica</strong> — Hospital Virgen de la Vega, Salamanca, Espanha (2011)</p></div>
+                <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Observership em Reconstrução Mamária</strong> — Instituto Europeu di Oncologia (IEO), Milão, Itália (2018)</p></div>
             </div>
         </div>
     </section>
@@ -775,7 +798,7 @@
                     <h3>Beneficência Portuguesa</h3>
                 </div>
                 <div class="hosp-card fade-up">
-                    <div class="hosp-logo hosp-logo--dark">
+                    <div class="hosp-logo hosp-logo--hcor">
                         <img src="img/hosp-hcor.png" alt="HCor">
                     </div>
                     <h3>HCor</h3>
