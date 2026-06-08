@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dra. Morgana Domingues - Ginecologista, Obstetra e Mastologista</title>
+    <title>Dra. Morgana Domingues | Mastologista e Ginecologista em São Paulo</title>
+    <meta name="description" content="Dra. Morgana Domingues — mastologia e ginecologia com ciência, acolhimento e cuidado individualizado. Atendimento na Vila Mariana, São Paulo. Especialista pela UNIFESP.">
+    <meta name="author" content="Dra. Morgana Domingues da Silva">
+    <meta property="og:title" content="Dra. Morgana Domingues | Mastologista e Ginecologista em São Paulo">
+    <meta property="og:description" content="Mastologia e ginecologia com ciência, acolhimento e cuidado individualizado. Experiência clínica e acadêmica dedicada à saúde da mulher.">
+    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,13 +17,14 @@
 
         :root {
             --primary: #a06160;
-            --primary-dark: #996b67;
+            --primary-dark: #834c4a;
+            --primary-deep: #6e3f3d;
             --primary-medium: #c4a19a;
             --primary-light: #ccb7ae;
             --primary-lighter: #d8c3c0;
             --bg: #f4eee9;
             --white: #ffffff;
-            --text-dark: #3d2c2b;
+            --text-dark: #2e1f1e;
             --text-medium: #6b5654;
             --text-light: #8a7574;
         }
@@ -57,7 +63,7 @@
         }
 
         .logo-monogram {
-            width: 200px; height: auto;
+            width: 240px; height: auto;
             display: flex; align-items: center; justify-content: center;
         }
 
@@ -123,7 +129,7 @@
         }
 
         .hero h1 em {
-            font-style: italic; color: var(--primary);
+            font-style: italic; color: var(--primary-deep); font-weight: 600;
         }
 
         .hero .subtitle {
@@ -170,8 +176,8 @@
             gap: 1rem; padding: 1.5rem 2rem;
         }
 
-        .divider .dl { width: 60px; height: 1px; background: var(--primary-light); }
-        .divider .dd { width: 6px; height: 6px; border: 1px solid var(--primary); border-radius: 50%; transform: rotate(45deg); }
+        .divider .dl { width: 70px; height: 1px; background: var(--primary-medium); }
+        .divider .dd { width: 7px; height: 7px; background: var(--primary-deep); border: 1px solid var(--primary-deep); border-radius: 50%; transform: rotate(45deg); }
 
         /* ── ABOUT ── */
         .about { padding: 6rem 2rem; background: white; }
@@ -197,12 +203,12 @@
         }
 
         .about-label {
-            font-size: 0.8rem; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--primary); margin-bottom: 1rem;
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--primary-deep); margin-bottom: 1rem;
             display: flex; align-items: center; gap: 0.5rem;
         }
 
-        .about-label .line { width: 24px; height: 1.5px; background: var(--primary); }
+        .about-label .line { width: 24px; height: 1.5px; background: var(--primary-deep); }
 
         .about h2 {
             font-family: 'Quicksand', sans-serif;
@@ -211,14 +217,16 @@
         }
 
         .about .role {
-            font-size: 1.05rem; color: var(--primary); margin-bottom: 2rem;
-            font-weight: 500;
+            font-size: 1.05rem; color: var(--primary-deep); margin-bottom: 2rem;
+            font-weight: 600;
         }
 
         .about p {
             color: var(--text-medium); margin-bottom: 1.25rem;
             font-size: 1.02rem; line-height: 1.85; text-wrap: pretty;
         }
+
+        .about p strong { color: var(--primary-deep); font-weight: 700; }
 
         /* ── SERVICES ── */
         .services { padding: 6rem 2rem; background: var(--bg); }
@@ -229,13 +237,18 @@
         }
 
         .section-head .label {
-            font-size: 0.8rem; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--primary); margin-bottom: 0.75rem;
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--primary-deep); margin-bottom: 0.75rem;
         }
 
         .section-head h2 {
             font-family: 'Quicksand', sans-serif;
             font-size: 3rem; color: var(--text-dark); font-weight: 500;
+        }
+
+        .services-row-top {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem; max-width: 770px; margin: 0 auto 1.75rem;
         }
 
         .services-grid {
@@ -250,7 +263,7 @@
 
         .s-card::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0;
-            height: 3px; background: linear-gradient(90deg, var(--primary-medium), var(--primary));
+            height: 3px; background: linear-gradient(90deg, var(--primary), var(--primary-deep));
             transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
         }
 
@@ -277,16 +290,6 @@
             color: var(--text-medium); line-height: 1.75; font-size: 0.98rem;
         }
 
-        .services-grid .s-card:nth-child(4),
-        .services-grid .s-card:nth-child(5) {
-            grid-column: span 1;
-        }
-
-        .services-bottom-row {
-            display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 1.75rem; margin-top: 1.75rem;
-        }
-
         /* ── CREDENTIALS ── */
         .credentials { padding: 6rem 2rem; background: white; }
         .credentials .wrap { max-width: 1200px; margin: 0 auto; }
@@ -306,7 +309,7 @@
 
         .cred-dot {
             width: 8px; height: 8px; border-radius: 50%;
-            background: var(--primary); flex-shrink: 0;
+            background: var(--primary-deep); flex-shrink: 0;
         }
 
         .cred-item p {
@@ -333,13 +336,22 @@
 
         .hosp-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(160, 97, 96, 0.1); }
 
-        .hosp-icon {
-            width: 44px; height: 44px; border-radius: 50%;
-            background: var(--bg); display: flex; align-items: center;
-            justify-content: center; margin: 0 auto 1rem;
+        .hosp-logo {
+            height: 64px; display: flex; align-items: center;
+            justify-content: center; margin: 0 auto 1.1rem;
         }
 
-        .hosp-icon svg { width: 20px; height: 20px; color: var(--primary); }
+        .hosp-logo img {
+            max-height: 64px; max-width: 150px; width: auto;
+            object-fit: contain; display: block;
+        }
+
+        .hosp-logo--dark {
+            background: var(--text-dark); border-radius: 12px;
+            padding: 0.85rem 1.25rem; height: auto;
+        }
+
+        .hosp-logo--dark img { max-height: 40px; }
 
         .hosp-card h3 {
             font-size: 1rem; color: var(--text-dark); font-weight: 600; line-height: 1.4;
@@ -410,8 +422,8 @@
         }
 
         .contact .label {
-            font-size: 0.8rem; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--primary); margin-bottom: 0.5rem;
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--primary-deep); margin-bottom: 0.5rem;
         }
 
         .contact h2 {
@@ -464,7 +476,6 @@
         /* ── RESPONSIVE ── */
         @media (max-width: 960px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .services-bottom-row { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -478,8 +489,8 @@
             .about-content { order: 2; }
             .about-photo { order: 1; max-width: 100%; width: 100%; }
 
+            .services-row-top { grid-template-columns: 1fr; max-width: 100%; }
             .services-grid { grid-template-columns: 1fr; }
-            .services-bottom-row { grid-template-columns: 1fr; }
 
             .cred-grid { grid-template-columns: 1fr; }
 
@@ -517,9 +528,9 @@
         <div class="hero-bg-pattern"></div>
         <div class="wrap">
             <div class="hero-content">
-                <div class="hero-tag"><span class="line"></span> Ginecologia · Obstetrícia · Mastologia</div>
-                <h1>Cuidado ginecológico e mastológico com a <em>expertise</em> de quem forma os médicos do futuro.</h1>
-                <p class="subtitle">Especialista pela UNIFESP, mestre em Ciências e professora universitária. Atendimento humanizado e baseado em evidências.</p>
+                <div class="hero-tag"><span class="line"></span> Mastologia · Ginecologia</div>
+                <h1>Mastologia e ginecologia com ciência, acolhimento e <em>cuidado individualizado</em>.</h1>
+                <p class="subtitle">Experiência clínica e acadêmica dedicada à saúde da mulher.</p>
                 <a href="https://wa.me/5511937088275" class="hero-cta">
                     Agende sua consulta
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -544,13 +555,13 @@
                 <h2>Dra. Morgana Domingues da Silva</h2>
                 <p class="role">Mastologista · Ginecologista e Obstetra</p>
 
-                <p>Médica formada pela Escola Paulista de Medicina – Universidade Federal de São Paulo (CRM-SP 162850), com residência médica em Ginecologia e Obstetrícia e Mastologia pelo Hospital São Paulo – UNIFESP.</p>
+                <p>Médica formada pela Escola Paulista de Medicina – Universidade Federal de São Paulo (CRM-SP 162850), com residência médica em <strong>Ginecologia</strong> e Obstetrícia e <strong>Mastologia</strong> pelo Hospital São Paulo – <strong>UNIFESP</strong>.</p>
 
-                <p>Possui título de especialista em Ginecologia e Obstetrícia pela Febrasgo (RQE 69942) e em Mastologia pela Sociedade Brasileira de Mastologia (RQE 81458), além de mestrado em Ciências pela UNIFESP.</p>
+                <p>Possui título de especialista em <strong>Ginecologia</strong> e Obstetrícia pela Febrasgo (RQE 69942) e em <strong>Mastologia</strong> pela Sociedade Brasileira de Mastologia (RQE 81458), além de mestrado em Ciências pela <strong>UNIFESP</strong>.</p>
 
                 <p>Atua como mastologista no Centro de Oncologia do Hospital Santa Catarina e integra o corpo clínico de instituições de referência como Hospital Israelita Albert Einstein, Hospital Alemão Oswaldo Cruz, Hospital Beneficência Portuguesa de São Paulo e HCor.</p>
 
-                <p>Dedica-se também à formação de novos médicos, sendo preceptora da residência de Mastologia da UNIFESP e professora de Medicina da Faculdade Santo Amaro.</p>
+                <p>Dedica-se também à formação de novos médicos, sendo preceptora da residência de <strong>Mastologia</strong> da <strong>UNIFESP</strong> e <strong>professora</strong> de Medicina da Universidade Santo Amaro (UNISA).</p>
             </div>
         </div>
     </section>
@@ -563,6 +574,31 @@
             <div class="section-head">
                 <p class="label">Especialidades</p>
                 <h2>Serviços</h2>
+            </div>
+
+            <div class="services-row-top">
+                <div class="s-card fade-up">
+                    <div class="s-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 12h6"/><path d="M12 9v6"/>
+                            <path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0"/>
+                            <path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/>
+                        </svg>
+                    </div>
+                    <h3>Mastologia</h3>
+                    <p>Avaliação, rastreamento e tratamento de doenças mamárias, nódulos, alto risco familiar e câncer de mama.</p>
+                </div>
+
+                <div class="s-card fade-up">
+                    <div class="s-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="3"/>
+                            <path d="M12 8v8"/><path d="M8 12h8"/>
+                        </svg>
+                    </div>
+                    <h3>Cirurgias Mamárias</h3>
+                    <p>Procedimentos cirúrgicos realizados em hospitais de referência em São Paulo.</p>
+                </div>
             </div>
 
             <div class="services-grid">
@@ -598,31 +634,6 @@
                     <p>Seguimento e tratamento dos sintomas do climatério com abordagem atualizada e individualizada.</p>
                 </div>
             </div>
-
-            <div class="services-bottom-row">
-                <div class="s-card fade-up">
-                    <div class="s-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 12h6"/><path d="M12 9v6"/>
-                            <path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0"/>
-                            <path d="M12 2v2"/><path d="M12 20v2"/><path d="M2 12h2"/><path d="M20 12h2"/>
-                        </svg>
-                    </div>
-                    <h3>Mastologia</h3>
-                    <p>Avaliação, rastreamento e tratamento de doenças mamárias, nódulos, alto risco familiar e câncer de mama.</p>
-                </div>
-
-                <div class="s-card fade-up">
-                    <div class="s-card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="3"/>
-                            <path d="M12 8v8"/><path d="M8 12h8"/>
-                        </svg>
-                    </div>
-                    <h3>Cirurgias Mamárias</h3>
-                    <p>Procedimentos cirúrgicos realizados em hospitais de referência em São Paulo.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -644,7 +655,9 @@
                 <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Especialista em Mastologia</strong> — SBM (RQE 81458)</p></div>
                 <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Mestrado em Ciências</strong> — UNIFESP</p></div>
                 <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Preceptora da Residência de Mastologia</strong> — UNIFESP</p></div>
-                <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Professora de Medicina</strong> — Faculdade Santo Amaro</p></div>
+                <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Professora de Medicina</strong> — Universidade Santo Amaro (UNISA)</p></div>
+                <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Estágio em Clínica Médica</strong> — Hospital Virgen de la Vega, Salamanca, Espanha (2011)</p></div>
+                <div class="cred-item fade-up"><span class="cred-dot"></span><p><strong>Estágio em Reconstrução Mamária</strong> — Instituto Europeu di Oncologia (IEO), Milão, Itália (2018)</p></div>
             </div>
         </div>
     </section>
@@ -661,32 +674,32 @@
 
             <div class="hosp-grid">
                 <div class="hosp-card fade-up">
-                    <div class="hosp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M10 10h4"/><path d="M12 8v4"/></svg>
+                    <div class="hosp-logo">
+                        <img src="img/logo%20santa%20catrarina.png" alt="Hospital Santa Catarina">
                     </div>
                     <h3>Hospital Santa Catarina</h3>
                 </div>
                 <div class="hosp-card fade-up">
-                    <div class="hosp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M10 10h4"/><path d="M12 8v4"/></svg>
+                    <div class="hosp-logo">
+                        <img src="img/logo%20albert%20einstein.png" alt="Hospital Israelita Albert Einstein">
                     </div>
                     <h3>Hospital Israelita Albert Einstein</h3>
                 </div>
                 <div class="hosp-card fade-up">
-                    <div class="hosp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M10 10h4"/><path d="M12 8v4"/></svg>
+                    <div class="hosp-logo">
+                        <img src="img/Logo%20oswaldo%20cruz.png" alt="Hospital Alemão Oswaldo Cruz">
                     </div>
                     <h3>Hospital Alemão Oswaldo Cruz</h3>
                 </div>
                 <div class="hosp-card fade-up">
-                    <div class="hosp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M10 10h4"/><path d="M12 8v4"/></svg>
+                    <div class="hosp-logo">
+                        <img src="img/logo%20benefiuca%20portuguesa.png" alt="Beneficência Portuguesa">
                     </div>
                     <h3>Beneficência Portuguesa</h3>
                 </div>
                 <div class="hosp-card fade-up">
-                    <div class="hosp-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M10 10h4"/><path d="M12 8v4"/></svg>
+                    <div class="hosp-logo hosp-logo--dark">
+                        <img src="img/logo%20hcor.png" alt="HCor">
                     </div>
                     <h3>HCor</h3>
                 </div>
@@ -700,7 +713,7 @@
         <div class="wrap">
             <div class="contact-left">
                 <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4491158174377!2d-46.68954842374427!3d-23.5800342613488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce56d4b6c3b5b5%3A0x6c3c3c3c3c3c3c3c!2sAv.%20Brasil%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1699123456789!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=Av.%20Domingos%20de%20Moraes%2C%202781%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP&z=16&output=embed" width="100%" height="100%" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="contact-info">
                     <div class="contact-item">
@@ -718,7 +731,7 @@
                         </div>
                         <div class="contact-item-text">
                             <span class="contact-item-label">E-mail</span>
-                            <span class="contact-item-value">contato@dramorganadomingues.com.br</span>
+                            <span class="contact-item-value">dramdomingues@gmail.com</span>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -735,8 +748,8 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
                         </div>
                         <div class="contact-item-text">
-                            <span class="contact-item-label">Localização</span>
-                            <span class="contact-item-value">São Paulo, SP</span>
+                            <span class="contact-item-label">Endereço</span>
+                            <span class="contact-item-value">Av. Domingos de Moraes, 2781, 9º andar — Vila Mariana, São Paulo/SP</span>
                         </div>
                     </div>
                 </div>
@@ -744,7 +757,7 @@
             <div class="contact-right">
                 <p class="label">Contato</p>
                 <h2>Entre em Contato</h2>
-                <p>Estou pronta para ajudá-lo a alcançar seus objetivos de saúde e bem-estar. Entre em contato para agendar uma consulta ou tirar dúvidas.</p>
+                <p>Entre em contato para agendar sua consulta ou obter mais informações sobre atendimento em mastologia e ginecologia.</p>
                 <a href="https://wa.me/5511937088275" class="cta-final">
                     Agendar Consulta
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
