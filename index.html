@@ -316,10 +316,28 @@
         .s-card:hover .s-card-icon { background: rgba(160, 97, 96, 0.1); }
 
         .s-card-icon svg { width: 22px; height: 22px; color: var(--primary); }
+        .s-card-icon { transition: background 0.3s, opacity 0.35s ease, transform 0.35s ease; }
 
         .s-card h3 {
             font-size: 1.05rem; color: var(--text-dark);
             font-weight: 600; line-height: 1.35;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .s-card-desc {
+            position: absolute; inset: 0; margin: 0; z-index: 2;
+            display: flex; align-items: center;
+            padding: 0.9rem 1.2rem;
+            font-size: 0.9rem; line-height: 1.5; color: var(--text-medium);
+            opacity: 0; transform: translateY(8px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            pointer-events: none;
+        }
+
+        @media (hover: hover) and (min-width: 769px) {
+            .s-card:hover .s-card-icon { opacity: 0; transform: scale(0.85); }
+            .s-card:hover h3 { opacity: 0; transform: scale(1.4); transform-origin: left center; }
+            .s-card:hover .s-card-desc { opacity: 1; transform: translateY(0); }
         }
 
         /* ── CREDENTIALS ── */
@@ -691,6 +709,7 @@
                         </svg>
                     </div>
                     <h3>Mastologia</h3>
+                    <p class="s-card-desc">Avaliação e tratamento de doenças da mama, nódulos, alto risco e câncer de mama.</p>
                 </div>
 
                 <div class="s-card fade-up">
@@ -701,6 +720,7 @@
                         </svg>
                     </div>
                     <h3>Cirurgias Mamárias</h3>
+                    <p class="s-card-desc">Tratamento cirúrgico de lesões benignas e malignas da mama.</p>
                 </div>
             </div>
 
@@ -712,6 +732,7 @@
                         </svg>
                     </div>
                     <h3>Ginecologia Geral</h3>
+                    <p class="s-card-desc">Rotina ginecológica e cuidado com a saúde da mulher em todas as fases da vida.</p>
                 </div>
 
                 <div class="s-card fade-up">
@@ -722,6 +743,7 @@
                         </svg>
                     </div>
                     <h3>Contracepção e Planejamento</h3>
+                    <p class="s-card-desc">Métodos contraceptivos, DIU, implante e planejamento reprodutivo.</p>
                 </div>
 
                 <div class="s-card fade-up">
@@ -732,6 +754,7 @@
                         </svg>
                     </div>
                     <h3>Menopausa e Climatério</h3>
+                    <p class="s-card-desc">Acompanhamento e tratamento dos sintomas do climatério e da menopausa.</p>
                 </div>
             </div>
         </div>
