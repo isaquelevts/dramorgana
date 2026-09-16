@@ -176,8 +176,11 @@
             height: 600px; background: var(--primary-lighter);
             overflow: hidden; display: flex; align-items: center;
             justify-content: center;
-            font-family: 'Courier New', monospace; font-size: 0.85rem;
-            color: var(--text-light); text-align: center; padding: 2rem;
+        }
+
+        .hero-photo img {
+            width: 100%; height: 100%; display: block;
+            object-fit: cover; object-position: center 24%;
         }
 
         .hero-photo::after {
@@ -207,9 +210,12 @@
             aspect-ratio: 3/4; background: var(--primary-lighter);
             border-radius: 20px; overflow: hidden;
             display: flex; align-items: center; justify-content: center;
-            font-family: 'Courier New', monospace; font-size: 0.85rem;
-            color: var(--text-light); text-align: center; padding: 2rem;
             position: relative;
+        }
+
+        .about-photo img {
+            width: 100%; height: 100%; display: block;
+            object-fit: cover; object-position: center center;
         }
 
         .about-photo::before {
@@ -658,7 +664,7 @@
                 </a>
             </div>
             <div class="hero-photo">
-                [FOTO PROFISSIONAL]<br>retrato em ambiente médico,<br>fundo neutro
+                <img src="img/dra-morgana.webp" alt="Dra. Morgana Domingues usando jaleco branco" fetchpriority="high">
             </div>
         </div>
     </section>
@@ -669,7 +675,7 @@
     <section class="about" id="sobre">
         <div class="wrap">
             <div class="about-photo fade-up">
-                [FOTO SECUNDÁRIA]<br>contexto de ensino<br>ou atendimento
+                <img src="img/dra-morgana-sobre.webp" alt="Dra. Morgana Domingues trabalhando em seu consultório" loading="lazy">
             </div>
             <div class="about-content">
                 <div class="about-label"><span class="line"></span> Sobre</div>
