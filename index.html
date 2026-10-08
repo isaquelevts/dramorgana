@@ -302,12 +302,11 @@
         }
 
         .services-cards {
-            display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+            display: grid; grid-template-columns: 1fr;
             gap: 1rem; align-content: center;
         }
 
         .services-row-top, .services-grid { display: contents; }
-        .services-cards .s-card:last-child { grid-column: 1 / -1; }
 
         .s-card {
             background: white; padding: 1.05rem 1.2rem; border-radius: 10px;
